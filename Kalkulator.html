@@ -40,8 +40,8 @@
     <div class="bg">
     </div>
   <div class="main">
-    <form name="form">
-    <input class="input" name="textfield"/>
+    <form name="layar">
+    <input class="input" name="tombol"/>
     </form>
     <table>
     <tr>
@@ -76,19 +76,19 @@
   </div>
   <script>
     function isi(num){
-      document.form.textfield.value = document.form.textfield.value+num;
+      document.layar.tombol.value = document.layar.tombol.value+num;
     }
     function clean(){
-      document.form.textfield.value = "";
+      document.layar.tombol.value = "";
     }
     function hapus(){
-      var hapus = document.form.textfield.value;
-      document.form.textfield.value = hapus.substring(0,hapus.length-1);
+      var hapus = document.layar.tombol.value;
+      document.layar.tombol.value = hapus.substring(0,hapus.length-1);
     }
     function samadengan() {
-      var sd = document.form.textfield.value;
+      var sd = document.layar.tombol.value;
       if(sd){
-        document.form.textfield.value=eval(sd)
+        document.layar.tombol.value=eval(sd)
       }
     }
     </script>
