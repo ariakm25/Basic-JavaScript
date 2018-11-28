@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kalkulator Sederhana</title>
+    <style>
+    *{margin: 0;
+    padding: 0;}
+    .button {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      margin: 2px;
+      cursor: pointer;
+      background: #69c1a5;
+      color:#fff;
+      border:0
+    }
+    .input{
+      width: 206px;
+      padding: 10px 5px;
+      margin: 5px;
+      border: none;
+      font-size: 22px;}
+    .main{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      background: #c2e69a
+    }
+    .bg{
+      background: linear-gradient(to right,#a7f4ff, #ed849b);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+    </div>
+  <div class="main">
+    <form name="layar">
+    <input class="input" name="tombol"/>
+    </form>
+    <table>
+    <tr>
+      <td><button class="button" value="C" onclick="clean()"/>C</td>
+      <td><button class="button" value="<" onclick="hapus()"/><</td>
+      <td><button class="button" value="/" onclick="isi('/')"/>/</td>
+      <td><button class="button" value="X" onclick="isi('*')"/>X</td>
+    </tr>
+    <tr>
+      <td><button class="button" value="7" onclick="isi(7)"/>7</td>
+      <td><button class="button" value="8" onclick="isi(8)"/>8</td>
+      <td><button class="button" value="9" onclick="isi(9)"/>9</td>
+      <td><button class="button" value="-" onclick="isi('-')"/>-</td>
+    </tr>
+    <tr>
+      <td><button class="button" value="4" onclick="isi(4)"/>4</td>
+      <td><button class="button" value="5" onclick="isi(5)"/>5</td>
+      <td><button class="button" value="6" onclick="isi(6)"/>6</td>
+      <td><button class="button" value="+" onclick="isi('+')"/>+</td>
+    </tr>
+    <tr>
+      <td><button class="button" value="1"/ onclick="isi(1)">1</td>
+      <td><button class="button" value="2" onclick="isi(2)"/>2</td>
+      <td><button class="button" value="3" onclick="isi(3)"/>3</td>
+      <td rowspan="5"><button style="height:105px" class="button" value="=" onclick="samadengan()"/>=</td>
+    </tr>
+    <tr>
+      <td colspan="2"><button style="width:105px" class="button" value="0" onclick="isi(0)"/>0</td>
+      <td><button class="button" value="." onclick="isi('.')"/>.</td>
+    </tr>
+    </table>
+  </div>
+  <script>
+    function isi(num){
+      document.layar.tombol.value = document.layar.tombol.value+num;
+    }
+    function clean(){
+      document.layar.tombol.value = "";
+    }
+    function hapus(){
+      var hapus = document.layar.tombol.value;
+      document.layar.tombol.value = hapus.substring(0,hapus.length-1);
+    }
+    function samadengan() {
+      var sd = document.layar.tombol.value;
+      if(sd){
+        document.layar.tombol.value=eval(sd)
+      }
+    }
+    </script>
+  </body>
+</html>
