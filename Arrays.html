@@ -17,8 +17,8 @@ p.Hijau {background: green;color:#fff}
 <script>    
  var arr = ['Merah','Kuning','Hijau'];
  var a = '';
- function list(value, index, array){
-     a = a + "<p class='" + value + "'>" + value + "</p>";
+ function list(isi, no){
+     a = a + "<p class='" + isi + "'>" + (no+1) +" "+ isi + "</p>";
  }
  arr.forEach(list);
  document.getElementById("tes").innerHTML = a
