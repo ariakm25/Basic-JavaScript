@@ -11,11 +11,17 @@
             <input name="test"/>
     </form>
     <button onclick="fun('Hello World')">Click</button>
-
+    <p>Fungsi tambah</p>
+    <p id="test"></p>
     <script>
+        function tambah(a,b){
+            var total = a + b;
+            return total;
+        }
         function fun(isi){
             document.tes.test.value = document.tes.test.value+isi;
         }
+        document.getElementById("test").innerHTML = tambah(5,4);
     </script>
 </body>
 </html>
